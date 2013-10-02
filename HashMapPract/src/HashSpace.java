@@ -1,17 +1,15 @@
 import java.util.ArrayList;
-
+import java.util.List;
+//static ArrayList<GasCar> myGasCars = new ArrayList();
 
 public class HashSpace {
+	List<KeyValuePairs>[] myHashMap;
 	public HashSpace(int size){
-		ArrayList<ArrayList<KeyValuePairs>> hash = new ArrayList(); 
-		for(int i = 0; i < size; i++){
-			hash.add(ArrayList<KeyValuePairs> i);
-		}
+		myHashMap = new ArrayList[size];  
 	}
 	public static void add(String key, String value){
 		KeyValuePairs x = new KeyValuePairs(key,value);
-		int bin = key.length() % 10;
-		
+		int bin = (key.length()*key.charAt(0))  % 10;
 	}
 	public static void getVal(int ind){
 		
