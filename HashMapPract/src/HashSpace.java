@@ -5,7 +5,8 @@ import java.util.List;
 public class HashSpace {
 	List<KeyValuePairs>[] myHashMap;
 	public HashSpace(int size){
-		myHashMap = new ArrayList[size];  
+		myHashMap = new ArrayList[size]; 
+		
 	}
 	public static void add(String key, String value){
 		KeyValuePairs x = new KeyValuePairs(key,value);

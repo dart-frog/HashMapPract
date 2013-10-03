@@ -1,24 +1,30 @@
 import java.util.ArrayList;
 import java.util.List;
 public class MyHashMap {
-	MyHashMap(int NumberOfBuckets){
+	List<KeyValuePairs>[] myHashMap;
+	public MyHashMap(int numberOfBuckets){
 		
+		myHashMap = new ArrayList[numberOfBuckets];
 	}
-	public static void set(String Key, String Value){
+	public void set(String key, String value){
 		
+		int bin = (key.length()*key.charAt(0)) % 10;
+		myHashMap[bin].add(keyValuePairs(key,value));
 	}
-	public static String get(String key){
+	public String get(String key){
+		
 		return null;
 	}
-	public static List<String> getKeys(){
+	public List<String> getKeys(){
 		return null;
 	}
-	public static boolean exists(String Key){
+	public boolean exists(String Key){
 		return false;
 	}
-	public static int size(){
-		
+	public int size(){
+		return 0;
 	}
+	
 	
 	
 	

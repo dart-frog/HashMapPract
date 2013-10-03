@@ -6,10 +6,10 @@ public class KeyValuePairs {
 		key = myKey;
 		value = myValue;
 	}
-	public static String getValue(){
+	public String getValue(){
 		return value;
 	}
-	public static String getKey(){
+	public String getKey(){
 		return key; 
 	}
 }
