@@ -8,23 +8,23 @@ public class Screen {
 	}
 	
 	public static void setUp(){
+		JPanel p = new JPanel();
+		
 		JFrame frame = new JFrame("TopLevelDemo");       
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		JLabel yellowLabel = new JLabel();       
+		
+		JLabel yellowLabel = new JLabel("word");       
 		yellowLabel.setOpaque(true);       
 		yellowLabel.setBackground(new Color(248, 213, 131));        
 		yellowLabel.setPreferredSize(new Dimension(200, 180));
 		
-		frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
+		p.add(yellowLabel, BorderLayout.CENTER);
 		
+		frame.add(p);
 		frame.pack();       
 		frame.setVisible(true);
-		JTextComponent MyText = new JTextComponent();
 		
-
-
-		JOptionPane.showMessageDialog(frame, "Hey!");
 
 	}
 }
