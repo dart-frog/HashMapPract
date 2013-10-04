@@ -1,15 +1,18 @@
 import java.util.ArrayList;
 import java.util.List;
+
+
 public class MyHashMap {
 	List<KeyValuePairs>[] myHashMap;
 	public MyHashMap(int numberOfBuckets){
+
 		
 		myHashMap = new ArrayList[numberOfBuckets];
 	}
 	public void set(String key, String value){
 		
 		int bin = (key.length()*key.charAt(0)) % 10;
-		myHashMap[bin].add(keyValuePairs(key,value));
+		//myHashMap[bin].add(keyValuePairs(key,value));
 	}
 	public String get(String key){
 		
