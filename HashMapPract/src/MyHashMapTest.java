@@ -9,7 +9,10 @@ public class MyHashMapTest {
 	public void test() {
 		MyHashMap t = new MyHashMap(10);
 		t.set("berry", "black");
-		assertEquals("expected to be", "black", t.get("berry"));
+		//t.set("car", "bugatti");
+		assertEquals("verify that it can return a key", "black", t.get("berry"));
+		//ssertEquals("verify again that it can return a key", "car",t.get("bugatti"));
+		
 	}
 
 }
