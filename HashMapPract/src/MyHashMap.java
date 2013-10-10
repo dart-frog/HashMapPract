@@ -3,28 +3,36 @@ import java.util.List;
 
 
 public class MyHashMap {
-	List<List<KeyValuePairs>> myHashMap;
+	List<KeyValuePairs>[] myHashMap;
 	
+	@SuppressWarnings("unchecked")
 	public MyHashMap(int numberOfBuckets){
+		myHashMap = new ArrayList[numberOfBuckets];
+		for(int i = 0; i < numberOfBuckets; i++){
+			myHashMap[i] = new ArrayList<KeyValuePairs>();
+		}
+		/*
 		myHashMap = new ArrayList<List<KeyValuePairs>>();
 		for (int i = 0; i <= numberOfBuckets; i++){
-			myHashMap.add(new ArrayList<KeyValuePairs>(i));
+			myHashMap.add(new ArrayList<KeyValuePairs> (i));
 		}
+		*/
 		
 	} 
 	
 	
 	public void set(String key, String value){
-		int bin = (key.length()*key.charAt(0)) % (myHashMap.size() - 1);
+		int bin = (key.length()*key.charAt(0)) % (myHashMap.length - 1);
 		KeyValuePairs x = new KeyValuePairs(key,value);
-		myHashMap.get(bin).add(x);
+		myHashMap[bin].add(x);
 	}
 	public String get(String key){
-		int bin = (key.length()*key.charAt(0)) % 10;
-		List<KeyValuePairs> l = myHashMap.get(bin);
+		int bin = (key.length()*key.charAt(0)) % 9;
+		List<KeyValuePairs> l = myHashMap[bin];
 		int i = 0;
 		while(i < l.size()){
-			if (l.get(i).getKey().equals(key)){
+		String x =l.get(i).getKey();
+			if (x.equals(key)){
 				return l.get(i).getValue();
 			}
 			i++;
