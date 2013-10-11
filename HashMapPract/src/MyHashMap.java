@@ -25,14 +25,15 @@ public class MyHashMap {
 		int bin = (key.length()*key.charAt(0)) % (myHashMap.length - 1);
 		KeyValuePairs x = new KeyValuePairs(key,value);
 		myHashMap[bin].add(x);
+		x.getValue();
 	}
 	public String get(String key){
 		int bin = (key.length()*key.charAt(0)) % 9;
 		List<KeyValuePairs> l = myHashMap[bin];
 		int i = 0;
 		while(i < l.size()){
-		String x =l.get(i).getKey();
-			if (x.equals(key)){
+		String myX =l.get(i).getKey();
+			if (myX.equals(key)){
 				return l.get(i).getValue();
 			}
 			i++;

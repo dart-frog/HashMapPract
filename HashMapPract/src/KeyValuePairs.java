@@ -1,7 +1,7 @@
 
 public class KeyValuePairs {
-	static String key;
-	static String value;
+	String key;
+	String value;
 	public KeyValuePairs(String myKey, String myValue){
 		key = myKey;
 		value = myValue;
