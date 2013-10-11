@@ -55,7 +55,15 @@ public class MyHashMap {
 		return xList;
 		
 	}
-	public boolean exists(String Key){
+	public boolean exists(String key){
+		for (int i = 0; i < myHashMap.length; i++){
+			for (int y = 0; y < myHashMap[i].size();y++){
+				String myKey = myHashMap[i].get(y).getKey();
+				if (key.equals(myKey)){
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 	public int size(){
