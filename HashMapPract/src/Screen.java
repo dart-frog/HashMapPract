@@ -26,8 +26,21 @@ public class Screen {
 			String value = kvp[1];
 			t.set(key, value);
 		}
+		JFrame frame = new JFrame("TopLevelDemo");       
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JPanel p = new JPanel();
+		
+		for (int i = 1; i <= t.size(); i++){
+			JLabel menuLabel = new JLabel("bucket " + i);
+			menuLabel.setBackground(new Color(255, 10, 159));        
+			menuLabel.setPreferredSize(new Dimension(120, 60));
+			p.add(menuLabel, GridLayout..HORIZONTAL);
+		}
+		
+		
 		ArrayList<String> keys = (ArrayList<String>) t.getKeys();
 		int formalSize = 0;
+		
 		for (int i = 0; i < t.size(); i++){
 			for (int j = 0; j < t.bucketSize(i); j++){
 				String myKey = keys.get(formalSize);
@@ -35,25 +48,16 @@ public class Screen {
 			
 			
 			
-			JLabel yellowLabel = new JLabel(myKey + " " + myVal);       
-			yellowLabel.setOpaque(true);       
-			yellowLabel.setBackground(new Color(248, 213, 131));        
-			yellowLabel.setPreferredSize(new Dimension(200, 180));
+				JLabel yellowLabel = new JLabel(myKey + " " + myVal);       
+				yellowLabel.setOpaque(true);       
+				yellowLabel.setBackground(new Color(248, 213, 131));        
+				yellowLabel.setPreferredSize(new Dimension(120, 60));
 			
-			formalSize++;
+				formalSize++;
+				p.add(yellowLabel, BorderLayout.NORTH);
 			}
 		}
 		
-		JPanel p = new JPanel();
-		
-		JFrame frame = new JFrame("TopLevelDemo");       
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//p.add(yellowLabel, BorderLayout.CENTER);
-		
-		//JLabel yellowLabel = new JLabel("word");       
-		//yellowLabel.setOpaque(true);       
-		//yellowLabel.setBackground(new Color(248, 213, 131));        
-		//yellowLabel.setPreferredSize(new Dimension(200, 180));
 		
 		
 		

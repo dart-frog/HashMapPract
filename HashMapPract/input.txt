@@ -1,1 +1,9 @@
 food pizza
+money euro
+dog husky
+chip lays
+can tuna 
+soda cola 
+ice black
+mineral iron
+band bastille
