@@ -30,12 +30,21 @@ public class MyHashMapTest {
 		assertEquals("verify that it can return a list of strings", myT,t.getKeys());
 	}
 	@Test
-	public void getExists(){
+	public void existsTest(){
 		MyHashMap t = new MyHashMap(10);
 		t.set("berry", "black");
 		t.set("car", "bugatti");
 		t.set("can", "tuna");
 		assertEquals("verify that you can check if something exists", true, t.exists("can"));
+		assertEquals("verify that you can check if something does not exists", false, t.exists("sandwich"));
+	}
+	@Test
+	public void getBucketTest(){
+		MyHashMap t = new MyHashMap(10);
+		t.set("berry", "black");
+		t.set("car", "bugatti");
+		t.set("can", "tuna");
+		assertEquals("verify that it returns the right bucket", 4, t.getBucket("berry"));
 	}
 
 }
