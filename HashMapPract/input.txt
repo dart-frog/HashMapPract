@@ -7,3 +7,8 @@ soda cola
 ice black
 mineral iron
 band bastille
+university uw
+country france
+city seattle
+car honda
+soup chicken 
