@@ -12,3 +12,9 @@ country france
 city seattle
 car honda
 soup chicken 
+game chess
+pet dog
+art painting 
+book bible
+music rap
+president Obama
