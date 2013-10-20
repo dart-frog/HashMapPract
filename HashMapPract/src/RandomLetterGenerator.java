@@ -13,11 +13,11 @@ public class RandomLetterGenerator {
 	 */
 	
 	public static void main(String[] args) {
-		System.out.print(randomize());
+		printToFile();
 
 	}
 	public static String randomize(){
-		int rSize = (int) (Math.random() * MAXSIZE);
+		int rSize = (int) ((Math.random() * (MAXSIZE)) + 1);
 		StringBuilder mR = new StringBuilder();
 		for (int i = 0; i < rSize; i++){
 			char x = (char)((Math.random() * 25 + 97));
@@ -26,9 +26,19 @@ public class RandomLetterGenerator {
 		return mR.toString();
 	}
 	public static void printToFile(){
-		File myFi = new File("H:\\git\\HashMapPract\\HashMapPract\\input.txt");
-		FileWriter myWi = new FileWriter(myFi.getAbsoluteFile());
-		BufferedWriter myBu = new BufferedWriter();
+		File myFi = new File("input.txt");
+		try{
+			FileWriter myWi = new FileWriter(myFi.getAbsoluteFile());
+			BufferedWriter out = new BufferedWriter(myWi);
+			for(int i = 1; i <= COUNT; i++){
+				out.write(randomize() + " " + randomize() + "\n");
+			}
+			out.close();
+		}
+		
+		catch(Exception e){
+			System.out.print(e);
+		}
 	}
 
 }
